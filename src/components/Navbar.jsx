@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const token = localStorage.getItem("token");
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <nav className="w-full sticky top-0 zborder-b border-gray-200 dark:border-gray-600 bg-[#0D47A1] z-50">
       <div className="max-w-screen-xl container-fluid flex flex-wrap items-center justify-between mx-auto px-4 md:px-0 md:py-4">
@@ -98,10 +100,11 @@ const Navbar = () => {
                 )}
                 <li>
                   <Link
-                    to="/"
+                    to="#"
                     onClick={() => {
                       localStorage.removeItem("token");
                       localStorage.removeItem("usuario");
+                      navigate("/");
                       window.location.reload();
                     }}
                     className="block py-2 px-3 text-white rounded-md hover:bg-blue-900 md:p-2"
