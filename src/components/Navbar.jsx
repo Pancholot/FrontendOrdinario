@@ -98,7 +98,7 @@ const Navbar = () => {
                 )}
                 <li>
                   <Link
-                    to="#"
+                    to="/"
                     onClick={() => {
                       localStorage.removeItem("token");
                       localStorage.removeItem("usuario");
