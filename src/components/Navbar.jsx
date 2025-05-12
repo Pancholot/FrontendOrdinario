@@ -102,7 +102,7 @@ const Navbar = () => {
                     onClick={() => {
                       localStorage.removeItem("token");
                       localStorage.removeItem("usuario");
-                      window.location.reload(); // 🔁 recarga toda la página
+                      window.location.reload();
                     }}
                     className="block py-2 px-3 text-white rounded-md hover:bg-blue-900 md:p-2"
                   >

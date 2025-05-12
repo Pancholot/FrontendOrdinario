@@ -22,6 +22,7 @@ const Login = () => {
       const usuario = await login(credenciales);
       if (usuario) {
         navigate("/productos");
+        window.location.reload();
       } else {
         alert("No tienes permisos para acceder al panel de stock.");
       }
