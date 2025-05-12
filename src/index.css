@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+html, body {
+  min-height: 100%;
+  background-color: #9eb1d0;
+}
+
+p {
+  font-size: large;
+}
+
+.producto {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.hfoto {
+  background-image: url(/Assets/AguaGif.gif);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.gallery {
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.wave {
+  background-color: rgba(173, 216, 230, 0.6);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  min-height: 800px;
+  animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%,
+        84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%,
+        84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .wave {
+    min-height: 1500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wave {
+    height: 70px;
+  }
+}
+
+.gallery:hover {
+  transform: scale(1.15);
+  transition: all 0.5s ease;
+}
